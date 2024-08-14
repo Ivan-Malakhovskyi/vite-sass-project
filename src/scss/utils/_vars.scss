@@ -1,0 +1,29 @@
+//* That deny access to var must add - or _
+
+
+$main-white: #ffffff;
+$main-black: #000000;
+$accent-black: #292932; 
+
+$light-theme-text-color: #333333;
+$light-theme-bg-color: #ffffff;
+$light-theme-brand-color: #567567;
+
+$dark-theme-text-color: #ffffff;
+$dark-theme-bg-color: #333333;
+$dark-theme-brand-color: #abcabc;
+
+
+$themes: (
+    light: (
+                text: $light-theme-text-color,
+                bg: $light-theme-bg-color,
+                brand: $light-theme-brand-color,
+    ),
+
+    dark: (
+                text: $dark-theme-text-color,
+                bg: $dark-theme-bg-color,
+                brand: $dark-theme-brand-color,
+    )
+)

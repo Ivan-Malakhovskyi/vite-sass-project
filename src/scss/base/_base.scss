@@ -1,0 +1,15 @@
+
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #292932;
+}
+.page-title {
+    color: #ffffff;
+    font-size: larger;
+    font-weight: 700;
+}

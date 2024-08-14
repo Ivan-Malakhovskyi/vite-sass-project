@@ -1,0 +1,10 @@
+@use '../utils' as fwd;
+
+
+.grid {
+    max-width: 1240px;
+    margin: 0 auto;
+    height: 100vh;
+    color: fwd.$main-white;
+    background-color: fwd.$main-black;
+}

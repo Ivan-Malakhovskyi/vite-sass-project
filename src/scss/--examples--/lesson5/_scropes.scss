@@ -1,0 +1,13 @@
+
+
+body {
+$color-primary: #ffffff;
+$color-secondary: orange !global; //That var will be show in global scope
+background-color: $color-primary;
+}
+
+p {
+
+    color: $color-secondary;
+
+}
