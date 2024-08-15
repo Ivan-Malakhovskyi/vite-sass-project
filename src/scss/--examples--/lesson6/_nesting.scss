@@ -8,8 +8,12 @@ color: teal;
 }
     
 .paragraph {
-font-size: 14px;
+font-size: 18px;
 }
 
 }
 
+
+.nested ~ p {
+background-color: tomato;
+}

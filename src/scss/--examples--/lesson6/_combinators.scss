@@ -32,22 +32,30 @@
   | Using combinators in SASS
   |============================
 */
-ul> {
+ul > {
     li {
         list-style: none;
     }
 }
 
-h2 {
-    +p {
-        border-top: 1px solid gray;
+
+h2  {
+   + p {
+        background-color: tomato;
     }
 }
 
-p {
-    ~ {
-        span {
-            opacity: 0.8;
+
+p  {
+  ~ {
+    span {
+            font-size: 12px;
         }
-    }
+  }
+}
+
+ul  {
+  li + li {
+    margin-top: 40px;
+  }
 }

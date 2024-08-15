@@ -1,0 +1,60 @@
+
+@use '../../utils/vars' as v;
+
+.link {
+color: v.$main-black; 
+
+&:hover, &:focus {
+    background-color: azure;
+}
+}
+
+
+
+.button {
+    background:  {
+        color: teal;
+        position: center;
+        repeat: no-repeat;
+    };
+
+    color: red;
+
+    &:hover,
+    &:focus {
+        background-color: rgb(14, 88, 88);
+    }
+
+
+}
+
+//* & - вказує на батьківський селектор
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+        transform: scale(1.2);
+    
+    }
+
+ //Застосувати дане правило до елементу btn-icon,
+ //який є нащадком ел з класом button, який в стані ховеру
+ //Буде .button:hover .btn-label
+    .button:hover & {
+        font-size: 25px;
+              
+    }
+}
+
+.btn-label {
+    font-size: 20px;
+
+
+
+
+    .button:hover & {
+        font-size: 28px;
+    }
+}

@@ -1,5 +1,5 @@
 
-// @use 'utils';
+@use 'utils';
 // @use 'vendors';
 // @use 'base';
 // @use 'layout';
@@ -14,5 +14,9 @@
 // @use '--examples--/lesson5/base';
 
 
-@use '--examples--/lesson6/combinators';
-@use '--examples--/lesson6/nesting';
+// @use '--examples--/lesson6/combinators';
+// @use '--examples--/lesson6/nesting';
+// @use '--examples--/lesson6//ampersand';
+
+@use '--examples--/lesson7/math';
+@use '--examples--/lesson7/task-badge';
