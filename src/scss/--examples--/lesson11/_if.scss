@@ -1,0 +1,70 @@
+//! У препроцесорі Sass до falsy значень належать "false" та "null",
+//! усе інше є "truthy" значеннями і приводиться до true
+
+
+
+
+// @if statement
+@mixin avatar($size, $circle: false) {
+    width: $size;
+    height: $size;
+@if ($circle) {
+border-radius: 50%;
+} 
+
+}
+
+.square-avatar {
+    @include avatar(100px);
+}
+
+.circle-avatar {
+    @include avatar(100px, $circle: true);
+}
+
+
+// Conditional statements
+
+ @mixin fonts($fs,$fw:null,$lh:null, $ls:null, $align) {
+
+font-size: $fs;
+
+    @if $fw {
+        font-weight: $fw;
+    };
+
+
+    @if $ls {
+        @if $lh == normal {
+                line-height: normal;
+            }
+        
+            @else if(math.unit($lh)=='px') {
+                line-height: calc($lh / $fs)
+            }
+        
+            @else {
+                @error "$lh value #{$lh} is not valid"
+            }
+};
+
+        @if $ls {
+        @if $ls ==normal {
+                letter-spacing: normal;
+            }
+        
+            @else {
+                letter-spacing: #{calc($ls / $fs)}em;
+            }
+        
+        
+            @if $align {
+                text-align: $align;
+            }
+ }
+}
+
+
+.title {
+    @include fonts(20px,$lh:28px, $ls:0.5px, $align:center)
+}

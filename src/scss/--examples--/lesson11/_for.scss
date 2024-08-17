@@ -1,0 +1,32 @@
+//* @for at-rule with calculators 
+//! "through" include last number in enumeration
+
+$base-weight: 400;
+
+
+@for $i from 0 through 3 {
+.fw-#{$base-weight + ($i * 100)} {
+    font-weight: $base-weight + ($i * 100);
+}
+}
+
+//* difference between "through" and "to" 
+//! "to" does not include last number in enumeration
+
+// @for $i from 0 to 3 {
+//     @debug 'without last num #{$i}';
+// }
+
+
+// @for $_ from 0 through 3 {
+// @debug $_;
+// }
+
+$n: 0;
+
+@while $n < 4 { 
+
+
+$n: $n + 1;
+@debug 'While #{$n}'
+}

@@ -1,0 +1,143 @@
+// $primary: #f07f2e;
+// $success: #82c43c;
+// $primary: #4e75ff;
+
+
+
+.container {
+// display: flex;
+// flex-direction: column;
+// align-items: center;
+
+padding: 0 15px;
+}
+
+//* BAD ❌
+
+// .notify {
+//     display: flex;
+//     align-items: center;
+//     padding: 20px;
+//     gap: 20px;
+//     width: 480px;
+//     background-color: beige;
+//     border-radius: 6px;
+    
+//     &:not(:last-child ) {
+//         margin-bottom: 20px;
+//     }
+// }
+
+
+// .notify-btn {
+//     margin-left: auto;
+// }
+
+// .notify-primary {
+// background-color: #f07f2e;
+// }
+
+// .notify-success {
+// background-color: #82c43c;
+// }
+
+// .notify-error {
+// background-color: #4e75ff;
+// }
+
+
+//* Better
+
+// .notify {
+//     display: flex;
+//     align-items: center;
+//     padding: 20px;
+//     gap: 20px;
+//     width: 480px;
+//     background-color: beige;
+//     border-radius: 6px;
+
+//     &:not(:last-child) {
+//         margin-bottom: 20px;
+//     }
+// }
+
+
+
+// .notify-primary {
+//     @extend .notify;
+
+//     background-color: #f07f2e;
+// }
+
+// .notify-success {
+//     @extend .notify;
+
+//     background-color: #82c43c;
+// }
+
+// .notify-error {
+//     @extend .notify;
+
+//     background-color: #4e75ff;
+// }
+
+
+
+//* Excellent ✅
+
+//* Placeholder - %
+
+%notify {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    width: 480px;
+    background-color: beige;
+    border-radius: 6px;
+    font-size: 20px;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (min-width:768px) {
+        font-size: 24px;
+    }
+
+}
+
+
+
+.notify-primary {
+    @extend %notify;
+
+    background-color: #f07f2e;
+
+}
+
+.notify-success {
+    @extend %notify;
+
+    background-color: #82c43c;
+}
+
+.notify-error {
+    @extend %notify;
+
+    background-color: #4e75ff;
+}
+
+
+
+.notify-btn {
+    margin-left: auto;
+}
+
+
+//!Error
+
+// @media screen {
+//     @extend
+// }

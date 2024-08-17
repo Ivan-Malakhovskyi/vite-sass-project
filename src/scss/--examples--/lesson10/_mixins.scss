@@ -1,0 +1,160 @@
+// @mixin size($width, $height:$width) {
+// width: $width;
+// height:$height;
+
+// }
+
+// %size {
+//     width: 150px;
+//     height: 150px;
+// }
+
+// .user-avatar {
+//     @include size(200);
+//     @extend %size;
+
+
+//     border-radius: 50%;
+// }
+
+// .icon {
+// @include size(20);
+// @extend %size;
+
+// }
+
+
+//? Arguments
+
+
+//*Without arguments
+
+// @mixin position-center { 
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }   
+
+
+// .decoration {
+//     @include position-center;
+// }
+
+
+
+//* With args
+// @mixin position($position-type, $position-x, 
+// $position-y,$offset-x, $offset-y ) {
+//     position: $position-type; 
+//     top: $position-x;
+//     left: $position-y;
+//     transform: translate($offset-x, $offset-y);
+// }
+
+
+// .decoration {
+//     @include position(absolute, 50%, 50%, -50%, -50%);
+// }
+
+
+//*Optional params
+
+// @mixin position(
+// $layer-index, //!Required params first
+// $position-type:absolute,
+// $position-x: 50%,
+// $position-y: $position-x,
+// $offset-x: $position-x,
+// $offset-y: $position-x ) {
+//     position: $position-type;
+//     top: $position-x;
+//     left: $position-y;
+//     transform: translate(($offset-x * -1 ), ($offset-y * -1));
+//     z-index: $layer-index;
+// }
+
+
+//* That change default param need write param $name: need value
+// .decoration {
+//     @include position(1,$offset-y: 70%);
+// }
+
+
+//*Arguments list
+
+// %btn {
+//     font-family: Montserrat;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 20px;
+//     /* 142.857% */
+//     letter-spacing: 0.5px;
+//     color: #fafafb;
+
+//     background-color: #f07f2e;
+//     border: none;
+//     cursor: pointer;
+//     transition: 300ms;
+
+//     &:hover, &:focus {
+//         background-color: #f15c27;
+//         box-shadow: 0px 4px 10px 0px rgba(240, 127, 46, 0.25);
+//     }
+// }
+
+
+
+// @mixin btn-size($args...) {
+//     @debug $args;
+
+//     @for $i from 1 through length($args) {
+//         #{nth($args, $i)} {
+//             $factor: ($i  * 4 - 4);
+            
+//         @extend %btn;    
+//         padding: (4px + $factor) (8px + $factor);
+//         border-radius: (8px + $factor);
+//         }
+//     }
+    
+// }
+
+// @include btn-size('.btn-sm','.btn-md', '.btn-lg', '.btn-xl');
+
+//* Any number of named arguments  $btn-sm: ..
+
+// @use 'sass:meta';
+
+// @mixin btn-type($named-args...) {
+//     @each $name, $color in meta.keywords($named-args){
+//         .btn-#{$name} {
+//         border: 1px solid $color;
+//         color: $color;
+//         }
+//     }
+// }
+
+
+
+// @include btn-type($success:green, $error: red, $info: lightblue);
+
+//* @content
+
+
+@mixin hover($state) {
+&:not([#{$state}]):hover{
+    @content;
+}
+}
+
+.button {
+    background-color: orange;
+    border-radius: 6px;
+    border: 1px solid silver;
+
+    @include hover($state:disabled) {
+        color: wheat; 
+        background-color: silver;
+    };
+}

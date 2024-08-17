@@ -1,5 +1,5 @@
 
-@use 'utils';
+// @use 'utils';
 // @use 'vendors';
 // @use 'base';
 // @use 'layout';
@@ -18,5 +18,13 @@
 // @use '--examples--/lesson6/nesting';
 // @use '--examples--/lesson6//ampersand';
 
-@use '--examples--/lesson7/math';
-@use '--examples--/lesson7/task-badge';
+// @use '--examples--/lesson7/math';
+// @use '--examples--/lesson7/task-badge';
+// @use '--examples--/lesson9'
+
+
+// @use '--examples--/lesson10/mixins';    
+// @use 'components/button';
+
+// @use '--examples--/lesson11';
+@use '--examples--/lesson12'
