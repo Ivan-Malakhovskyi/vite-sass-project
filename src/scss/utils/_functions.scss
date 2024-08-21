@@ -1,0 +1,5 @@
+@use 'sass:map';
+
+@function get-color($colors, $color) {
+    @return map.get($colors, $color)
+}

@@ -1,0 +1,56 @@
+
+$breakpoints: (
+    'sm': '375px',
+    "md": '768px',
+    'xl': '1200px',
+    'xxl': '1440px',
+    'lg': '1900px'
+);
+
+$colors: (
+    "light-primary": #FAFAFB,
+    "light-secondary": #B5B5BE,
+    "light-tertiary": #92929D,
+    "dark": #000000,
+    "dark-primary": #13131A,
+    "dark-secondary":  #1C1C24,
+    "accent-primary": #F07F2E,
+    "accent-secondary": F15C27,
+    "accent-tertiary": #D14A00,
+    'info-danger': #FC5A5A,
+    'info-warning': #A461D8,
+    'info-success': #82C43C,
+    'info': #4E75FF,
+    "transparent": transparent,
+    'current': currentColor
+);
+
+$paddings: (
+    'base': 4px,
+    'sm': 8px,
+    'md': 16px,
+    'xl': 20px,
+);
+
+$spacers: (
+'base': 24px,
+'sm': 32px,
+'md': 36px,
+'xl': 64px,
+);
+
+$main-font: 'Montserrat';
+
+$font-weights: (
+    "Regular": 400,
+    "Medium": 500,
+    'Semibold': 600,
+    'Bold': 700
+) ;
+
+$font-sizes: (
+'base': 14px,
+'sm': 16px,
+'md': 20px,
+'xl': 24px,
+)
